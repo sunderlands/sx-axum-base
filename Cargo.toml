@@ -1,0 +1,14 @@
+[workspace]
+members = [".", "serv"]
+
+[package]
+name = "sx-axum-base"
+version = "0.1.0"
+edition = "2024"
+authors = ["sunderlands"]
+description = "A scaffold based on Axum"
+publish = false
+
+[dependencies]
+mimalloc = "0.1.46"
+serv = { path = "./serv" }
