@@ -52,6 +52,7 @@ pub struct Log {
 
 static CONFIG: OnceLock<Config> = OnceLock::new();
 
+/// 配置文件入口，单例模式，线程安全
 pub fn instance() -> &'static Config {
     CONFIG.get_or_init(|| match Config::load() {
         Ok(config) => config,

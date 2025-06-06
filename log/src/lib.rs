@@ -12,7 +12,7 @@ use tracing_subscriber::{
 /// # 将tracing融入anyhow流程
 /// 专门用于传入 `anyhow` 的 `with_context` ，且同时进行 `tracing::error!` 记录  
 ///
-/// **注意！若跨项目使用，需要在使用项目中Cargo.tomml引入tracing**
+/// **注意！若跨项目使用，需要在使用项目中Cargo.toml引入tracing**
 #[macro_export]
 macro_rules! error_with_context {
     ($($arg:tt)*) => {{
