@@ -1,0 +1,46 @@
+[server]
+host = "localhost"
+port = 3000
+# cors = { origin = [
+#     "http://localhost:4321",
+# ], methods = [
+#     "POST",
+#     "GET",
+#     "DELETE",
+#     "PUT",
+#     "PATCH",
+# ], headers = [
+#     "content-type",
+# ] }
+
+# # 若启用了sea-orm的数据库连接，必须按照sea-orm指示添加features
+# <https://www.sea-ql.org/SeaORM/docs/install-and-config/database-and-async-runtime/>  
+# 
+# Cargo.toml  
+#
+# `sea-orm = { version = "1.1.0", features = [ <DATABASE_DRIVER>, <ASYNC_RUNTIME>, "macros" ] }`  
+#
+# ## <DATABASE_DRIVER>可选范围有:  
+#
+# `sqlx-mysql - SQLx MySQL and MariaDB`  
+#
+# `sqlx-postgres - SQLx PostgreSQL`  
+#
+# `sqlx-sqlite - SQLx SQLite`  
+#
+# ## <ASYNC_RUNTIME>可选范围有:  
+#
+# `runtime-async-std-native-tls`  
+#
+# `runtime-tokio-native-tls`  
+#
+# `runtime-async-std-rustls`  
+#
+# `runtime-tokio-rustls`
+
+# [database]
+# url = "postgres://user:passwords@localhost/database"
+
+[log]
+level = "info"
+debug = true

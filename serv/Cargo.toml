@@ -4,5 +4,8 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-axum = "0.8.4"
-tokio = { version = "1.45.1", features = ["full"] }
+anyhow.workspace = true
+axum.workspace = true
+log = { version = "0.1.0", path = "../log" }
+tokio.workspace = true
+tracing.workspace = true

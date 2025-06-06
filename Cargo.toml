@@ -1,5 +1,5 @@
 [workspace]
-members = [".", "serv"]
+members = [".", "config", "log", "serv", "toolkit"]
 
 [package]
 name = "sx-axum-base"
@@ -10,5 +10,23 @@ description = "A scaffold based on Axum"
 publish = false
 
 [dependencies]
+log = { version = "0.1.0", path = "log" }
 mimalloc = "0.1.46"
 serv = { path = "./serv" }
+
+[workspace.dependencies]
+anyhow = "1.0.98"
+axum = "0.8.4"
+log = { path = "../log" }
+serde = { version = "1.0.219", features = ["derive"] }
+time = { version = "0.3.41", features = ["macros"] }
+tokio = { version = "1.45.1", features = ["full"] }
+toml = "0.8.22"
+tracing = "0.1.41"
+tracing-appender = "0.2.3"
+tracing-subscriber = { version = "0.3.19", features = [
+    "env-filter",
+    "fmt",
+    "json",
+    "time",
+] }

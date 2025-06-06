@@ -5,5 +5,7 @@ use mimalloc::MiMalloc;
 static GLOBAL: MiMalloc = MiMalloc;
 
 fn main() {
-    serv::run();
+    // 注册日志模块，保持无阻塞日志模块的守护者
+    let _gaurds = log::init();
+    serv::run().unwrap();
 }
