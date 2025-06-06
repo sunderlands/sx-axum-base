@@ -1,7 +1,11 @@
 use anyhow::Context;
-use axum::{Router, serve};
+use axum::serve;
 use log::error_with_context;
 use tokio::net::TcpListener;
+
+use crate::route::route;
+
+mod route;
 
 #[tokio::main]
 pub async fn run() -> anyhow::Result<()> {
@@ -11,9 +15,14 @@ pub async fn run() -> anyhow::Result<()> {
         .with_context(error_with_context!("绑定监听器失败，监听地址:[{}]", addr))?;
     tracing::info!("监听器绑定成功，监听地址:[{}]", addr);
 
-    serve(listener, Router::new())
-        .await
-        .with_context(error_with_context!("服务启动失败"))?;
+    serve(
+        listener,
+        route()
+            .await
+            .with_context(error_with_context!("创建路由失败"))?,
+    )
+    .await
+    .with_context(error_with_context!("服务启动失败"))?;
 
     Ok(())
 }
