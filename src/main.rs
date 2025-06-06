@@ -7,5 +7,6 @@ static GLOBAL: MiMalloc = MiMalloc;
 fn main() {
     // 注册日志模块，保持无阻塞日志模块的守护者
     let _gaurds = log::init();
+    // 启动服务
     serv::run().unwrap();
 }

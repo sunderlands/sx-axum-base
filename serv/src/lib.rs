@@ -9,7 +9,11 @@ mod route;
 
 #[tokio::main]
 pub async fn run() -> anyhow::Result<()> {
-    let addr = format!("localhost:3000");
+    let addr = format!(
+        "{}:{}",
+        config::instance().server.host,
+        config::instance().server.port
+    );
     let listener = TcpListener::bind(&addr)
         .await
         .with_context(error_with_context!("绑定监听器失败，监听地址:[{}]", addr))?;

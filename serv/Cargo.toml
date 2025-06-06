@@ -6,6 +6,8 @@ edition = "2024"
 [dependencies]
 anyhow.workspace = true
 axum.workspace = true
+config = { version = "0.1.0", path = "../config" }
 log = { version = "0.1.0", path = "../log" }
 tokio.workspace = true
+tower-http.workspace = true
 tracing.workspace = true

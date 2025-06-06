@@ -2,13 +2,13 @@
 host = "localhost"
 port = 3000
 # cors = { origin = [
-#     "http://localhost:4321",
+#     "http://localhost:70000",
 # ], methods = [
-#     "POST",
-#     "GET",
-#     "DELETE",
-#     "PUT",
-#     "PATCH",
+#     "post",
+#     "get",
+#     "delete",
+#     "put",
+#     "patch",
 # ], headers = [
 #     "content-type",
 # ] }
@@ -43,4 +43,4 @@ port = 3000
 
 [log]
 level = "info"
-debug = true
+debug = false
