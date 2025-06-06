@@ -43,4 +43,4 @@ port = 3000
 
 [log]
 level = "info"
-debug = false
+debug = true  # 是否向显示器输出日志
