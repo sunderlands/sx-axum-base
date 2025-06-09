@@ -12,8 +12,14 @@ use tower_http::{
     timeout::TimeoutLayer, trace::TraceLayer,
 };
 
+use crate::state::State;
+
 pub async fn route() -> anyhow::Result<Router> {
-    let mut route = Router::new().nest("/api", Router::new());
+    let state = State::new()
+        .await
+        .with_context(error_with_context!("初始化State时发生异常"))?;
+
+    let mut route = Router::new().nest("/api", Router::new()).with_state(state);
     route = layers(route).with_context(error_with_context!("路由配置layer时发生异常"))?;
     tracing::info!("路由创建成功");
 

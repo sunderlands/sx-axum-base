@@ -38,8 +38,8 @@ port = 3000
 #
 # `runtime-tokio-rustls`
 
-# [database]
-# url = "postgres://user:passwords@localhost/database"
+[database]
+url = "postgres://user:passwords@localhost/database"
 
 [log]
 level = "info"

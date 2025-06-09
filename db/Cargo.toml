@@ -1,0 +1,10 @@
+[package]
+name = "db"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow.workspace = true
+log = { version = "0.1.0", path = "../log" }
+sea-orm.workspace = true
+tracing.workspace = true

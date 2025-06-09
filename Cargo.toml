@@ -1,5 +1,5 @@
 [workspace]
-members = [".", "config", "log", "serv", "toolkit"]
+members = [".", "config", "db", "log", "serv", "toolkit"]
 
 [package]
 name = "sx-axum-base"
@@ -18,10 +18,11 @@ serv = { path = "./serv" }
 anyhow = "1.0.98"
 axum = "0.8.4"
 log = { path = "../log" }
+sea-orm = "1.1.12"
 serde = { version = "1.0.219", features = ["derive"] }
 time = { version = "0.3.41", features = ["macros"] }
 tokio = { version = "1.45.1", features = ["full"] }
-toml = "0.8.22"
+toml = "0.8.23"
 tower-http = { version = "0.6.5", features = [
     "compression-gzip",
     "cors",
